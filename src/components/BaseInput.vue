@@ -32,5 +32,7 @@ defineProps({
     font-size: 16px;
 }
 
-
+label {
+  text-align: left;
+}
 </style>

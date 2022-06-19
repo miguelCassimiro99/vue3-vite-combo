@@ -2,8 +2,9 @@
 <div>
   <img alt="Vue logo" src="./assets/logo.png" />
   <!-- <my-form /> -->
-  <BaseInput label="First Name:" v-model="firstName" />
-  <p>{{firstName}}</p>
+  <!-- <BaseInput label="First Name:" v-model="firstName" /> -->
+
+  <validated-form />
 </div>
   
 </template>
@@ -12,6 +13,7 @@
 import { ref } from 'vue'
 import MyForm from './components/MyForm.vue'
 import BaseInput from './components/BaseInput.vue'
+import ValidatedForm from './components/ValidatedForm.vue'
 
 
 const firstName = ref("");
