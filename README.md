@@ -1,30 +1,68 @@
 # Vue 3 + TypeScript + Vite
 
-### Run this project
-npm run dev
+This small project was created to learn and apply studies about Vue3, Typescript, Vite and Form Validation usen Vuelidate and created a reusable input component
 
-### install vuelidate and validations
+How does it works 🔍
+
+- This project is usefull to see how quickly is Vue using Vite and understand how to apply forms validation with custom and default rules.
+
+🌐 [Vue.js](https://vuejs.org/).
+
+🌐 [Vite](https://vitejs.dev/)
+
+🌐 [Vuelidate](https://vuelidate-next.netlify.app/)
+
+---
+
+## Setup 🏗️
+
+```bash
+npm install
+npm run dev
+```
+
+### Installing Vuelidate and validations
+
+```bash
 npm install @vuelidate/core @vuelidate/validators
+```
 
 ### Vuelidate setup
-- After install, import to the Form using:
-import useVuelidate from '@vuelidate/core'
-import { required } from '@vuelidate/validators'
 
-- Create the rules to the form data we want to rule
+- After install, import to the Form using:
+
+```tsx
+import useVuelidate from '@vuelidate/core'
+import { required } from '@vuelidate/validators' // import of required rule
+```
+
+- Create the rules to the form data we want to rule:
+
+```tsx
 const formData = reactive({
-  username: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
+	username: "",
+	email: "",
+	password: "",
+	confirmPassword: "", 
 })
 
 const rules = {
-  username: { required },
-  email: { required },
-  password: { required },
-  confirmPassword: { required }
+	username: { required }, 
+	email: { required },
+	password: { required }, 
+	confirmPassword: { required } 
 }
+```
 
-- Create the function to initializate the Vuelidate on component
+Create the function to initializate the Vuelidade on component
+
+```tsx
 const v$ = useValidate(rules, formData)
+```
+
+## Features 📜
+
+- [x]  Create a Vue 3 app using Vite
+- [x]  Create an reusable input component
+- [x]  use Typescript
+- [x]  Create a Form with validation use Vuelidate
