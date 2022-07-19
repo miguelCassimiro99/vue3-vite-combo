@@ -1,12 +1,23 @@
 <template>
+<div>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <my-form />
+  <!-- <my-form /> -->
+  <!-- <BaseInput label="First Name:" v-model="firstName" /> -->
+
+  <validated-form />
+</div>
+  
 </template>
 
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+<script setup>
+import { ref } from 'vue'
 import MyForm from './components/MyForm.vue'
+import BaseInput from './components/BaseInput.vue'
+import ValidatedForm from './components/ValidatedForm.vue'
+
+
+const firstName = ref("");
+
 </script>
 
 <style>

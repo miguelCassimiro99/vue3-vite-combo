@@ -1,16 +1,68 @@
 # Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This small project was created to learn and apply studies about Vue3, Typescript, Vite and Form Validation usen Vuelidate and created a reusable input component
 
-## Recommended IDE Setup
+How does it works 🔍
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- This project is usefull to see how quickly is Vue using Vite and understand how to apply forms validation with custom and default rules.
 
-## Type Support For `.vue` Imports in TS
+🌐 [Vue.js](https://vuejs.org/).
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+🌐 [Vite](https://vitejs.dev/)
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+🌐 [Vuelidate](https://vuelidate-next.netlify.app/)
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+---
+
+## Setup 🏗️
+
+```bash
+npm install
+npm run dev
+```
+
+### Installing Vuelidate and validations
+
+```bash
+npm install @vuelidate/core @vuelidate/validators
+```
+
+### Vuelidate setup
+
+- After install, import to the Form using:
+
+```tsx
+import useVuelidate from '@vuelidate/core'
+import { required } from '@vuelidate/validators' // import of required rule
+```
+
+- Create the rules to the form data we want to rule:
+
+```tsx
+const formData = reactive({
+	username: "",
+	email: "",
+	password: "",
+	confirmPassword: "", 
+})
+
+const rules = {
+	username: { required }, 
+	email: { required },
+	password: { required }, 
+	confirmPassword: { required } 
+}
+```
+
+Create the function to initializate the Vuelidade on component
+
+```tsx
+const v$ = useValidate(rules, formData)
+```
+
+## Features 📜
+
+- [x]  Create a Vue 3 app using Vite
+- [x]  Create an reusable input component
+- [x]  use Typescript
+- [x]  Create a Form with validation use Vuelidate
