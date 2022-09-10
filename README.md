@@ -60,6 +60,9 @@ Create the function to initializate the Vuelidade on component
 const v$ = useValidate(rules, formData)
 ```
 
+### Attributes
+using the v-bing="$attrs" allow us to use attributes dynamically on the componente. In this case, as we use an input element, may we need to use different types like email or password, and number as well. So on this case, binding this value we can make the things more interesting.
+
 ## Features 📜
 
 - [x]  Create a Vue 3 app using Vite
